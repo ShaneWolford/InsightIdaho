@@ -4,34 +4,51 @@
     <title>Insight Idaho | Stoping CyberBullying.</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
-    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300&amp;display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/e581c92dce.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter&amp;family=Oswald:wght@300&amp;display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
-    <script>
-        $(function(){
-            $('#ReadMoreInformation').hide()
-            $('#myBtn').click(function(){
-                $('#dots').toggle()
-                $('#ReadMoreInformation').toggle()
-                if ($('#myBtn').text()=='Read Less') {
-                    $('#myBtn').text('Read More')
-                } else {
-                    $('#myBtn').text('Read Less')
-                }
-                
-            })
-        })
-    </script>
-        <style>
-            #more {display: none;}
-            </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
+    <link rel="icon" type="image/x-icon" href="../imgs/Insight.png">
+    <link rel="stylesheet" href="Styling/About-style.css">
+      <script>
+          function openNav() {
+            
+            document.getElementById("myNav").style.width = "100%";
+            document.getElementById("Hamburger").style.display = "none";
+            document.getElementById("myBtn").style.opacity = "0";
+            document.getElementById("LogoMobile").style.opacity = "0";
+  
+          }
+          
+          function closeNav() {
+            document.getElementById("myNav").style.width = "0%";
+            document.getElementById("Hamburger").style.display = "block";
+            document.getElementById("myBtn").style.opacity = "1";
+            document.getElementById("LogoMobile").style.opacity = "1";
+            
+          }
+      </script>
+    <div id="myNav" class="overlay">
+      <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+      <div class="overlay-content">
+          <a href="#" style="color: white;">Insight Idaho</a>
+          <a href="pages/About.html" style="color: white;">About</a>
+          <a href="pages/Why.html" style="color: white;">Why?</a>
+          <a href="pages/User.html" style="color: white;">User</a>
+          <a href="pages/Contact.html" style="color: white;">Contact</a>
+      </div>
+    </div>
+    <h1 id="LogoMobile">Insight Idaho</h1>
+    <i class="fa-solid fa-bars fa-xl" onclick="openNav()" id="Hamburger"></i>
   <style type="text/css" id="operaUserStyle"></style></head>
   <body>
     <div class="Navagation">
         <ul>
           <li><a href="#" style="text-decoration: none;color:white;"><p class="hover-underline-animation">Insight Idaho</p></a></li>
-          <li><a href="pages/Menu.html" style="text-decoration: none;color:white;"><p class="hover-underline-animation">About</p></a></li>
-          <li><a href="pages/Events.html" style="text-decoration: none;color:white;"><p class="hover-underline-animation">Why?</p></a></li>
-          <li><a href="pages/RV.html" style="text-decoration: none;color:white;"><p class="hover-underline-animation">User</p></a></li>
+          <li><a href="pages/About.html" style="text-decoration: none;color:white;"><p class="hover-underline-animation">About</p></a></li>
+          <li><a href="pages/Why.html" style="text-decoration: none;color:white;"><p class="hover-underline-animation">Why?</p></a></li>
+          <li><a href="pages/User.html" style="text-decoration: none;color:white;"><p class="hover-underline-animation">User</p></a></li>
           <li><a href="pages/Contact.html" style="text-decoration: none;color:white;"><p class="hover-underline-animation">Contact</p></a></li>
         </ul>
       </div>
@@ -41,8 +58,18 @@
           <h1 id="About">Helping Idaho with cyberbullying.</h1>
         </div>
       </div>
+      <span id="dots"></span><span id="more">more</span>
+      <section id="ReadMoreInformation">
+        <p>fuiewrhfouiwrhouifwreqohurewo</p>
+      </section>
+      <div class="Button">
+        <button onclick="myFunction()" id="myBtn">Read more</button>
   
-  </body>
+      </div>
+  
+  
+  
+  </body></html>
   </html>
 
   <!--Insight Idaho, an organization dedicated to combating cyberbullying, was established with the primary goal of providing support and assistance to victims of online harassment. Founded on the principles of empathy and digital safety, Insight Idaho recognizes the pervasive impact of cyberbullying on individuals and aims to create a safer online environment. Leveraging a multifaceted approach, the organization employs educational initiatives, counseling services, and technological interventions to address the issue. One notable feature is their commitment to removing toxic content from online platforms, particularly comments deemed harmful or abusive. Through a strategic partnership with various online platforms, Insight Idaho is actively working to develop and implement mechanisms that identify and delete comments containing offensive language, including those associated with the word "hate." By taking proactive measures to foster a culture of res<pect and kindness online, Insight Idaho endeavors to empower victims and promote a more positive digital space for all users.-->
