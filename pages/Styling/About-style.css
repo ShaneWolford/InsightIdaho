@@ -120,7 +120,7 @@ table {
     }
     .hero-image {
         /* Use "linear-gradient" to add a darken background effect to the image (photographer.jpg). This will make the text easier to read */
-        background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("imgs/pexels-photo-247314.webp");
+        background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../imgs/pexels-photo-247314.webp");
         grid-column: 1/5;
         grid-row: 1/8;   
       
@@ -200,7 +200,7 @@ table {
     }
       .hero-image {
           /* Use "linear-gradient" to add a darken background effect to the image (photographer.jpg). This will make the text easier to read */
-          background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("imgs/pexels-photo-247314.webp");
+          background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../imgs/pexels-photo-247314.webp");
           grid-column: 1/5;
           grid-row: 1/8;   
         
