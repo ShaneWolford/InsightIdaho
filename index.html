@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Insight Idaho | Stoping CyberBullying.</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script>
+        $(function(){
+            $('#ReadMoreInformation').hide()
+            $('#myBtn').click(function(){
+                $('#dots').toggle()
+                $('#ReadMoreInformation').toggle()
+                if ($('#myBtn').text()=='Read Less') {
+                    $('#myBtn').text('Read More')
+                } else {
+                    $('#myBtn').text('Read Less')
+                }
+                
+            })
+        })
+    </script>
+        <style>
+            #more {display: none;}
+            </style>
+</head>
+<body>
+    <div class="Navagation">
+        <ul>
+          <li><a href="#" style="text-decoration: none;color:white;"><p class="hover-underline-animation">Insight Idaho</p></a></li>
+          <li><a href="pages/Menu.html" style="text-decoration: none;color:white;"><p class="hover-underline-animation">About</p></a></li>
+          <li><a href="pages/Events.html" style="text-decoration: none;color:white;"><p class="hover-underline-animation">Why?</p></a></li>
+          <li><a href="pages/RV.html" style="text-decoration: none;color:white;"><p class="hover-underline-animation">User</p></a></li>
+          <li><a href="pages/Contact.html" style="text-decoration: none;color:white;"><p class="hover-underline-animation">Contact</p></a></li>
+        </ul>
+      </div>
+    <div class="hero-image">  
+        <div class="hero-text">
+          <h1 id="Welcome">Insight Idaho.</h1>
+          <h1 id="About">Helping Idaho with cyberbullying.</h1>
+        </div>
+      </div>
+      <span id="dots"></span><span id="more">more</span>
+      <section id="ReadMoreInformation">
+        <p>fuiewrhfouiwrhouifwreqohurewo</p>
+      </section>
+      <p id="button">
+        <button onclick="myFunction()" id="myBtn">Read more</button>
+    </p>
+
+</body>
+</html>
