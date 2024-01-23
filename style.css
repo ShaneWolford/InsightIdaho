@@ -95,12 +95,160 @@ html {
     scroll-behavior: smooth;
 }
 @media screen and (max-width: 625px) {
-    body {
-        display: grid;
-        grid-template-columns: 1fr 1fr 1fr 1fr;
-        grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  #DepressionImage, #DepressionImage2, #DepressionImage3 {
+    display: none;
+  }
+  body {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+}
+.overlay a {
+    font-size: 40px
+}
+
+.overlay .closebtn {
+    font-size: 40px;
+    top: 11px;
+    right: 35px;
+}
+
+
+  .hero-image {
+      /* Use "linear-gradient" to add a darken background effect to the image (photographer.jpg). This will make the text easier to read */
+      background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("imgs/pexels-photo-247314.webp");
+      grid-column: 1/5;
+      grid-row: 1/9;   
+    
+      /* Set a specific height */
+      height: 124.9%;
+    
+      /* Position and center the image to scale nicely on all screens */
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      position: relative;
     }
-    #LogoMobile {
+    .hero-text {
+      text-align: center;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      color: white;
+      font-family: 'Oswald';
+    }
+    #Welcome {
+        font-size: 48px;
+        margin-bottom: 24px;
+
+    }
+    #About {
+        font-size: 30px;
+
+    }
+    .hover-underline-animation {
+        display: inline-block;
+        position: relative;
+        color: white;
+      }
+      
+      .hover-underline-animation:after {
+        content: '';
+        position: absolute;
+        width: 100%;
+        transform: scaleX(0);
+        height: 2px;
+        bottom: -7px;
+        left: 0;
+        background-color: white;
+        transform-origin: bottom right;
+        transition: transform 0.25s ease-out;
+      }
+      
+      .hover-underline-animation:hover:after {
+        transform: scaleX(1);
+        transform-origin: bottom left;
+      }
+
+      .Navagation {
+        display: none;
+      }
+      #LOGO {
+        display: none;
+      }
+      .demo {
+        position: relative;
+        top: 200px;
+        line-height: 1.4;
+        grid-row: 10/15;
+        grid-column: 2/4;
+      }     
+      .demo h1 {
+
+        font-size: 48px;
+        text-align: center;
+        margin-bottom: 24px;
+        font-family: 'Oswald';
+      }
+      .demo p {
+
+        font-size: 20px;
+        margin-bottom: 24px;
+        font-family: 'Oswald';
+        text-align: center;
+      }
+
+
+      .demo2 {
+        position: relative;
+        top: 1600px;
+        line-height: 1.4;
+        grid-row: 10/15;
+        grid-column: 2/4;
+      }
+      .demo2 h1 {
+
+        font-size: 48px;
+        margin-bottom: 24px;
+        font-family: 'Oswald';
+        text-align: center;
+      }
+      .demo2 p {
+
+        font-size: 20px;
+        margin-bottom: 24px;
+        font-family: 'Oswald';
+        text-align: center;
+      }
+
+
+
+      .demo3 {
+        position: relative;
+        top: 2800px;
+        line-height: 1.4;
+        grid-row: 10/15;
+        grid-column: 2/4;
+        
+      }
+
+      
+      .demo3 h1 {
+
+        font-size: 48px;
+        margin-bottom: 24px;
+        font-family: 'Oswald';
+        text-align: center;
+      }
+      .demo3 p {
+
+        font-size: 20px;
+        margin-bottom: 24px;
+        font-family: 'Oswald';
+        text-align: center;
+      }
+      #LogoMobile {
         font-family: 'Oswald';
         z-index: 2;
         font-weight: 500;
@@ -117,46 +265,36 @@ html {
         padding: 40px;
         color: white;
     }
-    .Navagation {
-        display: none;
-    }
-    #LOGO {
-        display: none;
-    }
-    .hero-image {
-        /* Use "linear-gradient" to add a darken background effect to the image (photographer.jpg). This will make the text easier to read */
-        background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("imgs/pexels-photo-247314.webp");
-        grid-column: 1/5;
-        grid-row: 1/8;   
-      
-        /* Set a specific height */
-        height: 114.3%;
-      
-        /* Position and center the image to scale nicely on all screens */
-        background-position: center;
-        background-repeat: no-repeat;
-        background-size: cover;
+    #DepressionImage {
         position: relative;
-      }
-      .hero-text {
-        text-align: center;
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        color: white;
-        font-family: 'Oswald';
-      }
-      #Welcome {
-            margin-top: -175px;
-          font-size: 48px;
-          margin-bottom: 24px;
+        top: 200px;
+        grid-row: 10/15;
+        grid-column: 2/5;
+       
+        width: 500px;
+        margin-left: 690px;
 
-      }
-      #About {
-          font-size: 30px;
+    }
+    #DepressionImage2 {
+        position: relative;
+        top: 845px;
+        grid-row: 10/15;
+        grid-column: 2/5;
+       
+        width: 400px;
+        margin-left: 815px;
 
-      }
+    }
+    #DepressionImage3 {
+        position: relative;
+        top: 1350px;
+        grid-row: 10/15;
+        grid-column: 2/5;
+       
+        width: 500px;
+        margin-left: 750px;
+
+    }
       #myBtn {
         z-index: 1;
         color:#ffffff;
@@ -173,134 +311,15 @@ html {
     }
     .Button {
         margin: 0;
-        margin-top: 175px;
+        margin-top: 250px;
         position: absolute;
         top: 50%;
         left: 50%;
         -ms-transform: translate(-50%, -50%);
         transform: translate(-50%, -50%);
     }
-          .demo {
-            position: relative;
-            top: 200px;
-            line-height: 1.4;
-            grid-row: 10/15;
-            grid-column: 1/3;
-            margin-left: 175px;
-          }
-          .demo h1 {
-
-            font-size: 48px;
-            margin-bottom: 24px;
-            font-family: 'Oswald';
-          }
-          .demo p {
-
-            font-size: 20px;
-            margin-bottom: 24px;
-            font-family: 'Oswald';
-          }
 
 
-          .demo2 {
-            position: relative;
-            top: 875px;
-            line-height: 1.4;
-            grid-row: 10/15;
-            grid-column: 1/3;
-            margin-left: 175px;
-          }
-          .demo2 h1 {
-
-            font-size: 48px;
-            margin-bottom: 24px;
-            font-family: 'Oswald';
-          }
-          .demo2 p {
-
-            font-size: 20px;
-            margin-bottom: 24px;
-            font-family: 'Oswald';
-          }
-
-
-
-          .demo3 {
-            position: relative;
-            top: 1390px;
-            line-height: 1.4;
-            grid-row: 10/15;
-            grid-column: 1/3;
-            margin-left: 175px;
-          }
-
-          
-          .demo3 h1 {
-
-            font-size: 48px;
-            margin-bottom: 24px;
-            font-family: 'Oswald';
-          }
-          .demo3 p {
-
-            font-size: 20px;
-            margin-bottom: 24px;
-            font-family: 'Oswald';
-          }
-
-        #DepressionImage {
-            position: relative;
-            top: 200px;
-            grid-row: 10/15;
-            grid-column: 2/5;
-           
-            width: 500px;
-            margin-left: 690px;
-
-        }
-        #DepressionImage2 {
-            position: relative;
-            top: 845px;
-            grid-row: 10/15;
-            grid-column: 2/5;
-           
-            width: 400px;
-            margin-left: 815px;
-
-        }
-        #DepressionImage3 {
-            position: relative;
-            top: 1350px;
-            grid-row: 10/15;
-            grid-column: 2/5;
-           
-            width: 500px;
-            margin-left: 750px;
-
-        }
-          #myBtn {
-            z-index: 1;
-            color:#ffffff;
-            background-color: #343131;
-            border-color: transparent;
-            border-radius: 20px;
-            width: 150px;
-            height: 40px;
-            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-            margin: 0;
-    
-            font-size: 18px;
-            z-index: 1;
-        }
-        .Button {
-            margin: 0;
-            margin-top: 250px;
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            -ms-transform: translate(-50%, -50%);
-            transform: translate(-50%, -50%);
-        }
           
 }
 
