@@ -1,72 +1,160 @@
 <html lang="en"><head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Insight Idaho | Stoping CyberBullying.</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
-  <script src="https://kit.fontawesome.com/e581c92dce.js" crossorigin="anonymous"></script>
-  <link href="https://fonts.googleapis.com/css2?family=Inter&amp;family=Oswald:wght@300&amp;display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
-  <link rel="icon" type="image/x-icon" href="imgs/BustersLogo.png">
-  <link rel="stylesheet" href="style.css">
-    <script>
-        function openNav() {
-          
-          document.getElementById("myNav").style.width = "100%";
-          document.getElementById("Hamburger").style.display = "none";
-          document.getElementById("myBtn").style.opacity = "0";
-          document.getElementById("LogoMobile").style.opacity = "0";
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Insight Idaho | Stoping CyberBullying.</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <script src="https://kit.fontawesome.com/e581c92dce.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter&amp;family=Oswald:wght@300&amp;display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
+    <link rel="icon" type="image/x-icon" href="imgs/BustersLogo.png">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+      <script>
+        var section = document.getElementsByTagName("section"),
+        nav = document.getElementById("nav-bar"),
+        navHeight = nav.offsetHeight,
+        navAnchor = nav.querySelectorAll("li a"),
+        animate = findAnimationElement();
 
+        for (var i = 0; i < navAnchor.length; i++) {
+        var element = navAnchor[i];
+
+        element.addEventListener("click", function(e) {
+            var el = this,
+            id = el.getAttribute("href");
+
+            e.preventDefault(); // <=== Don't follow the link
+            scrollTo(document.getElementById(id.substring(1)), 300);
+            // Skip the "#" on "#1" -----------^^^^^^^^^^^^^
+        });
         }
+
+        function findAnimationElement() {
+        // Webkit browsers animate `body`, others animate `html` (the document element)
+        var bodyCurrent = document.body.scrollTop;
+        var docElCurrent = document.documentElement.scrollTop;
+        document.documentElement.scrollTop = document.body.scrollTop = 10;
+        var animate;
+        if (document.body.scrollTop > 0) {
+            animate = document.body;
+            document.body.scrollTop = bodyCurrent;
+        } else {
+            animate = document.documentElement;
+            document.documentElement.scrollTop = docElCurrent;
+        }
+        return animate;
+        }
+
+        function scrollTo(to, duration) {
+        // When should we finish?
+        var finishAt = Date.now() + duration;
         
-        function closeNav() {
-          document.getElementById("myNav").style.width = "0%";
-          document.getElementById("Hamburger").style.display = "block";
-          document.getElementById("myBtn").style.opacity = "1";
-          document.getElementById("LogoMobile").style.opacity = "1";
-          
+        // Start
+        requestAnimationFrame(tick);
+
+        function tick() {
+            // How many frames left? (60fps = 16.6ms per frame)
+            var framesLeft = (finishAt - Date.now()) / 16.6;
+            
+            // How far do we have to go?
+            var distance = to.getBoundingClientRect().top;
+            if (distance <= 0) {
+            // Done (this shouldn't happen, belt & braces)
+            return;
+            }
+            
+            // Adjust by one frame's worth
+            if (framesLeft <= 1) {
+            // Last call
+            animate.scrollTop += distance;
+            } else {
+            // Not the last, adjust and schedule next
+            animate.scrollTop += Math.max(1, distance / framesLeft);
+            requestAnimationFrame(tick);
+            }
         }
-    </script>
-  <div id="myNav" class="overlay">
-    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-    <div class="overlay-content">
-        <a href="#" style="color: white;">Insight Idaho</a>
-        <a href="pages/About.html" style="color: white;">About</a>
-        <a href="pages/Why.html" style="color: white;">Why?</a>
-        <a href="pages/User.html" style="color: white;">User</a>
-        <a href="pages/Contact.html" style="color: white;">Contact</a>
-    </div>
-  </div>
-  <h1 id="LogoMobile">Insight Idaho</h1>
-  <i class="fa-solid fa-bars fa-xl" onclick="openNav()" id="Hamburger"></i>
-<style type="text/css" id="operaUserStyle"></style></head>
-<body>
-  <div class="Navagation">
-      <ul>
-        <li><a href="#" style="text-decoration: none;color:white;"><p class="hover-underline-animation">Insight Idaho</p></a></li>
-        <li><a href="pages/About.html" style="text-decoration: none;color:white;"><p class="hover-underline-animation">About</p></a></li>
-        <li><a href="pages/Why.html" style="text-decoration: none;color:white;"><p class="hover-underline-animation">Why?</p></a></li>
-        <li><a href="pages/User.html" style="text-decoration: none;color:white;"><p class="hover-underline-animation">User</p></a></li>
-        <li><a href="pages/Contact.html" style="text-decoration: none;color:white;"><p class="hover-underline-animation">Contact</p></a></li>
-      </ul>
-    </div>
-  <div class="hero-image">  
-      <div class="hero-text">
-        <h1 id="Welcome">Insight Idaho.</h1>
-        <h1 id="About">Helping Idaho with cyberbullying.</h1>
+        }
+          function openNav() {
+            
+            document.getElementById("myNav").style.width = "100%";
+            document.getElementById("Hamburger").style.display = "none";
+            document.getElementById("myBtn").style.opacity = "0";
+            document.getElementById("LogoMobile").style.opacity = "0";
+  
+          }
+          
+          function closeNav() {
+            document.getElementById("myNav").style.width = "0%";
+            document.getElementById("Hamburger").style.display = "block";
+            document.getElementById("myBtn").style.opacity = "1";
+            document.getElementById("LogoMobile").style.opacity = "1";
+            
+          }
+
+      </script>
+    <div id="myNav" class="overlay">
+      <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+      <div class="overlay-content">
+          <a href="#" style="color: white;">Insight Idaho</a>
+          <a href="pages/About.html" style="color: white;">About</a>
+          <a href="pages/Why.html" style="color: white;">Why?</a>
+          <a href="pages/User.html" style="color: white;">User</a>
+          <a href="pages/Contact.html" style="color: white;">Contact</a>
       </div>
     </div>
-    <span id="dots"></span><span id="more">more</span>
-    <section id="ReadMoreInformation">
-      <p>fuiewrhfouiwrhouifwreqohurewo</p>
-    </section>
-    <div class="Button">
-      <button onclick="myFunction()" id="myBtn">Read more</button>
+    <h1 id="LogoMobile">Insight Idaho</h1>
+    <i class="fa-solid fa-bars fa-xl" onclick="openNav()" id="Hamburger"></i>
+  <style type="text/css" id="operaUserStyle"></style></head>
+  <body>
+    <a href="#" style="text-decoration: none;color:white;" id="LOGO"><p class="hover-underline-animation">Insight Idaho</p></a>
+    <div class="Navagation">
+        <ul>
+          
+            <li><a href="pages/About.html" style="text-decoration: none;color:white;z-index: 1;"><p class="hover-underline-animation">About</p></a></li>
+            <li><a href="pages/Why.html" style="text-decoration: none;color:white;z-index: 1;"><p class="hover-underline-animation">Why?</p></a></li>
+            <li><a href="pages/User.html" style="text-decoration: none;color:white;z-index: 1;"><p class="hover-underline-animation">User</p></a></li>
+            <li><a href="pages/Contact.html" style="text-decoration: none;color:white;z-index: 1;"><p class="hover-underline-animation">Contact</p></a></li>
+        </ul>
+      </div>
+    <div class="hero-image">  
+        <div class="hero-text">
+          <h1 id="Welcome">Insight Idaho.</h1>
+          <h1 id="About">Helping Idaho with cyberbullying.</h1>
+        </div>
+      </div>
+      <span id="dots"></span><span id="more">more</span>
+      <section id="ReadMoreInformation">
+        <p>fuiewrhfouiwrhouifwreqohurewo</p>
+      </section>
+      <div class="Button">
+        <button onclick="document.getElementById('1').scrollIntoView();" id="myBtn">Read more</button>
+  
+      </div>
+      <img src="imgs/Depression.png" id="DepressionImage">
+      <section id="1" class="demo">
+        <h1>About Us.</h1>
+        <p>Insight Idaho, an organization dedicated to combating cyberbullying, was established with the primary goal of providing support and assistance to victims of online harassment. Founded on the principles of empathy and digital safety, Insight Idaho recognizes the pervasive impact of cyberbullying on individuals and aims to create a safer online environment. Leveraging a multifaceted approach, the organization employs educational initiatives, counseling services, and technological interventions to address the issue. One notable feature is their commitment to removing toxic content from online platforms, particularly comments deemed harmful or abusive. Through a strategic partnership with various online platforms, Insight Idaho is actively working to develop and implement mechanisms that identify and delete comments containing offensive language, including those associated with the word "hate." By taking proactive measures to foster a culture of respect and kindness online, Insight Idaho endeavors to empower victims and promote a more positive digital space for all users.</p>
 
-    </div>
+      </section>
+      <hr style="width:75%;margin-top:25px;grid-column: 2/4;grid-row: 17;position: relative;top: 600px;height: 10%;">
+      <img src="imgs/pngtree-cyber-bullying-and-online-crime-concept-png-image_6581175.png" id="DepressionImage2">
+      <section id="2" class="demo2">
+        <h1>Idaho Needs Help.</h1>
+        <p>The prevalence of cyberbullying in Idaho has become a pressing concern, particularly due to its detrimental impact on mental health, often leading to depression among affected individuals. Cyberbullying, facilitated through digital platforms and social media, can result in constant harassment, humiliation, and isolation for its victims. The anonymity provided by online spaces sometimes intensifies the severity of these attacks. The consequences are particularly profound among young people, contributing to a concerning rise in cases of depression. Addressing this issue necessitates a concerted effort from schools, communities, and online platforms to implement robust anti-cyberbullying measures, promote digital literacy, and create a supportive environment that encourages reporting and intervention to mitigate the adverse effects on mental health.</p>
+
+      </section>
 
 
+      <hr style="width:75%;margin-top:25px;grid-column: 2/4;grid-row: 17;position: relative;top: 1200px;height: 10%;">
+      <img src="imgs/—Pngtree—helping hand and depression concept_8900762.png" id="DepressionImage3">
+      <section id="3" class="demo3">
+        <h1>How We Help?</h1>
+        <p>To address the issue of hate and mean comments, we have implemented a comprehensive system for tracking and moderating user comments and messages. Our platform employs advanced algorithms and moderation tools designed to identify and flag potentially harmful content. We prioritize creating a positive and inclusive online environment, and our dedicated moderation team actively reviews flagged comments. Hate speech and mean comments are promptly addressed through the removal of such content, ensuring that our platform remains a safe space for users to engage in constructive and respectful discussions. We are committed to fostering a community where individuals feel comfortable expressing their opinions without fear of harassment, and our ongoing efforts in content moderation reflect our dedication to maintaining a welcoming online atmosphere.</p>
 
-</body></html>
+      </section>
+  
+  
+  </body></html>
