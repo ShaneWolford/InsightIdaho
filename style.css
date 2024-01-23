@@ -181,7 +181,7 @@ html {
         position: relative;
         top: 200px;
         line-height: 1.4;
-        grid-row: 10/15;
+        grid-row: 10/30;
         grid-column: 2/4;
       }     
       .demo h1 {
@@ -204,7 +204,7 @@ html {
         position: relative;
         top: 1600px;
         line-height: 1.4;
-        grid-row: 10/15;
+        grid-row: 10/30;
         grid-column: 2/4;
       }
       .demo2 h1 {
@@ -228,7 +228,7 @@ html {
         position: relative;
         top: 2800px;
         line-height: 1.4;
-        grid-row: 10/15;
+        grid-row: 10/30;
         grid-column: 2/4;
         
       }
